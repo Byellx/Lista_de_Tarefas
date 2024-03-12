@@ -1,0 +1,112 @@
+$cor_primaria: #FFE5A0;
+$cor_secundaria: #FDD700;
+$cor_texto: #000;
+$cor_bt_concluir: lighten(#11734B, 25%);
+$cor_bt_refazer: lighten(#0A53A8, 25%);
+$cor_bt_remover: lighten(#B10202, 25%);
+
+@mixin centralizar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app_main{
+    height: 100vh;
+    width: 100vw;
+    color: $cor_texto;
+    background-color: $cor_primaria;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h1{
+        @include centralizar();
+        height: 10%;
+    }
+
+    form{
+        @include centralizar();
+        height: 10%;
+        width: 80%;
+
+        fieldset{
+            @include centralizar();
+            height: 100%;
+            width: 100%;
+            border: 1px solid #000;
+
+            input{
+                @include centralizar();
+                height: 2em;
+                width: 60%;
+                outline: none;
+                border: none;
+            }
+
+            button{
+                background-color: #7B68EE;
+            }
+
+            button:hover{
+                background-color: lighten(#7B68EE, 10%);
+            }
+        }
+    }
+
+    ul{
+        width: 30%;
+        margin-top: 1em;
+        list-style: none;
+
+        li{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1em;
+
+            .tarefa{
+                max-width: 60%;
+                display: inherit;
+                flex-wrap: wrap;
+            }
+
+            .botoes{
+                .concluir{
+                    background-color: $cor_bt_concluir;
+                }
+
+                .concluir:hover{
+                    background-color: lighten($cor_bt_concluir, 10%);
+                }
+            
+                .refazer{
+                    background-color: $cor_bt_refazer;
+                }
+
+                .refazer:hover{
+                    background-color: lighten($cor_bt_refazer, 10%);
+                }
+            
+                .remover{
+                    background-color: $cor_bt_remover;
+                }
+
+                .remover:hover{
+                    background-color: lighten($cor_bt_remover, 10%);
+                }
+            }
+        }
+    }
+
+    .bt{
+        border: none;
+        height: 2em;
+        width: 5em;
+        background-color: #FFF;
+        transition: all .4s ease-in-out;
+    }
+
+    .bt:hover{
+        cursor: pointer;
+    }
+}
